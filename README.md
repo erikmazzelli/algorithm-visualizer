@@ -1,16 +1,71 @@
-# React + Vite
+# Algorithm Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web app for visualizing sorting algorithms in real time. Watch how Quick Sort, Merge Sort, Heap Sort, and Bubble Sort work step by step — with live comparison and swap counters, adjustable speed, and dynamic array sizing.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-blue) ![Vite](https://img.shields.io/badge/Vite-6-purple) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-teal)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **4 sorting algorithms** — Quick Sort, Merge Sort, Heap Sort, and Bubble Sort
+- **Real-time visualization** — bars animate as elements are compared and swapped
+- **Live metrics** — comparisons and swaps update on every operation
+- **Adjustable speed** — slide from slow-motion to near-instant
+- **Dynamic array size** — 10 to 100 elements
+- **Color coding** — blue for unsorted, yellow for comparing, red for pivot
+- **Pause / resume** — stop mid-sort and continue
+- **Dark UI** with glass-morphism styling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Algorithms
 
-## Expanding the ESLint configuration
+| Algorithm   | Time Complexity | Strategy                          |
+|-------------|-----------------|-----------------------------------|
+| Quick Sort  | O(n log n) avg  | Divide and conquer via pivot      |
+| Merge Sort  | O(n log n)      | Recursive divide then merge       |
+| Heap Sort   | O(n log n)      | Max-heap build then extract       |
+| Bubble Sort | O(n²)           | Repeated adjacent comparisons     |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+**Prerequisites:** Node.js 18+
+
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+```bash
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+## Usage
+
+1. Select an algorithm from the cards at the top
+2. Adjust array size and speed with the sliders
+3. Press **Play** to start the visualization
+4. Press **Pause** to pause mid-sort, or **Reset** to generate a new random array
+5. Watch the comparisons and swaps counters to compare algorithm efficiency
+
+## Tech Stack
+
+- [React 19](https://react.dev/) — UI framework
+- [Vite](https://vitejs.dev/) — build tool with HMR
+- [Tailwind CSS 4](https://tailwindcss.com/) — utility-first styling
+- [Lucide React](https://lucide.dev/) — icons
+
+## Project Structure
+
+```
+src/
+└── App.jsx      # Main component — all UI and algorithm logic
+```
+
+All four sorting algorithms use `async/await` with configurable delays so each operation is visible as it executes.
